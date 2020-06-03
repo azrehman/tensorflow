@@ -8,7 +8,7 @@ from tqdm import tqdm
 DATADIR = 'C:\\Datasets\\kagglecatsanddogs_3367a\\PetImages'
 CATEGORIES = ['Dog', 'Cat']
 
-IMG_SIZE = 200
+IMG_SIZE = 100
 
 
 training_data = []
@@ -42,19 +42,9 @@ y = []
 for features, label in training_data:
     X.append(features)
     y.append(label)
+
+#                    batches, 200x200 image,   greyscale
 X = np.array(X).reshape(-1, IMG_SIZE, IMG_SIZE, 1)
-
-# pickle_out = open('X.pickle', 'wb')
-# pickle.dump(X, pickle_out)
-# pickle_out.close()
-
-# pickle_out = open('y.pickle', 'wb')
-# pickle.dump(y, pickle_out)
-# pickle_out.close()
-
-# to load
-# pickle_in = open('X.pickle', 'rb')
-# X = pickle.load(pickle_in)
-
+y = np.array(y)
 np.save('X.npy', X)  # saving featureset
-np.save('y.npy', X)  # saving classes
+np.save('y.npy', y)  # saving classes
