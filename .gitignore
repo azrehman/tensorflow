@@ -1,6 +1,7 @@
 # ipynb checkpoints
 .ipynb_checkpoints
 */.ipynb_checkpoints/*
+**/*.ipynb_checkpoints/
 
 #Dataset files (too large)
 *.npy
