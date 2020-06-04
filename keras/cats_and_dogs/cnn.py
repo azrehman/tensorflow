@@ -18,7 +18,7 @@ y = np.load('y.npy')
 # normalize input
 X = X / 255.0
 
-
+print(X.shape[1:])
 # model architecture
 model = Sequential()
 
@@ -32,12 +32,12 @@ model.add(MaxPooling2D(pool_size=(2, 2)))
 
 # convert 3D feature maps to 1D feature vectors
 model.add(Flatten())
-model.add(Dense(64))
+model.add(Dense(32))
 model.add(Activation('relu'))
 
 # output layer
 model.add(Dense(1))
-model.add(Activation('sigmoid'))
+model.add(Activation('softmax'))
 
 # train model
 model.compile(loss='binary_crossentropy',

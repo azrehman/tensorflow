@@ -25,7 +25,7 @@ model.add(tf.keras.layers.Dense(10, activation=tf.nn.softmax))
 # model parameters
 model.compile(optimizer='adam',
               loss='sparse_categorical_crossentropy',
-              metrirrcs=['accuracy'])
+              metrics=['accuracy'])
 
 # train model
 model.fit(X_train, y_train, epochs=3)
